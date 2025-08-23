@@ -1,0 +1,22 @@
+{
+    "name": "web-terminal",
+    "version": "1.0.0",
+    "description": "Web-based terminal emulator written in typescript",
+    "scripts": {
+        "dev": "npx webpack serve",
+        "build": "npx webpack -c ./webpack.config.js"
+    },
+    "author": "Dan McCarthy",
+    "license": "MIT",
+    "devDependencies": {
+        "css-loader": "^7.1.2",
+        "mini-css-extract-plugin": "^2.9.4",
+        "sass-loader": "^16.0.5",
+        "ts-loader": "^9.5.2",
+        "typescript": "^5.9.2",
+        "webpack": "^5.101.3",
+        "webpack-cli": "^6.0.1",
+        "webpack-dev-server": "^5.2.2",
+        "webpack-plugin-serve": "^1.6.0"
+    }
+}

@@ -1,1 +1,1 @@
-# web-terminal
+# Web Terminal "Emulator"
