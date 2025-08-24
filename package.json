@@ -2,6 +2,7 @@
     "name": "web-terminal",
     "version": "1.0.0",
     "description": "Web-based terminal emulator written in typescript",
+    "type": "module",
     "scripts": {
         "dev": "npx webpack serve",
         "build": "npx webpack -c ./webpack.config.js"

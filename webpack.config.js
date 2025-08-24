@@ -1,22 +1,22 @@
-const path = require("path");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+import path, { dirname } from "path";
+import { fileURLToPath } from "url";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
-module.exports = (env) => {
-    console.log("val: " + env.prod);
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
+export default () => {
     return {
         entry: "./src/index.ts",
         // Environment and Dev Server Config
-        mode: env.prod ? "production" : "development",
-        devServer: env.prod
-            ? {}
-            : {
-                  static: {
-                      directory: path.resolve(__dirname, "."),
-                  },
-                  hot: true,
-                  port: 8080,
-                  open: false,
-              },
+        mode: "development",
+        devServer: {
+            static: {
+                directory: path.resolve(__dirname, "."),
+            },
+            hot: true,
+            port: 8080,
+            open: false,
+        },
         plugins: [new MiniCssExtractPlugin()],
         // Handle loading typescript and sass
         module: {
@@ -38,11 +38,11 @@ module.exports = (env) => {
             ],
         },
         resolve: {
-            extensions: [".ts", ".js"],
+            extensions: ["", ".js", ".jsx", ".ts", ".tsx"],
         },
         output: {
             filename: "index.bundle.js",
-            path: path.resolve(__dirname, "dist"),
+            path: path.resolve(__dirname, "./dist"),
         },
     };
 };

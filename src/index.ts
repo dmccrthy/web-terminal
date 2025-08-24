@@ -5,4 +5,7 @@
  */
 
 import "./main.scss";
-import "./ts/userInputHandler";
+import { Terminal, type TerminalConfig } from "./ts/Terminal";
+
+const config: TerminalConfig = {};
+const terminal = new Terminal("terminal", config);
